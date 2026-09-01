@@ -15,7 +15,6 @@ Payback Period: 2.9 months
 
 1. Business Problem
 
-flowchart LR
     A[Customer Churn] --> B[Revenue Loss]
     B --> C[Acquisition Costs]
     C --> D[Reduced Growth]
