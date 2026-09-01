@@ -145,9 +145,9 @@ Data Cleaning Steps
 ```mermaid
 flowchart LR
     A[Raw Data] --> B[Convert TotalCharges<br/>to numeric]
-    B --> C[Handle Missing Values<br/>fillna(0)]
-    C --> D[Drop customerID<br/>column]
+    B --> C["Handle Missing Values<br/>fillna(0)"]
     D --> E[Clean Data Ready]
+    C --> D[Drop customerID<br/>column]
 ```
 
 Feature Engineering
