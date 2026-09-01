@@ -69,7 +69,7 @@ graph LR
     S1 --> B1
     S2 --> B1
     B1 --> B2
-
+```
 2. Data Overview
 
 Dataset Summary
@@ -78,7 +78,7 @@ Dataset Summary
 pie title Dataset Composition (7,043 Customers)
     "Retained" : 5242
     "Churned" : 1801
-
+```
 Feature Categories
 
 ```mermaid
@@ -94,7 +94,7 @@ graph LR
     F2 --> Target
     F3 --> Target
     F4 --> Target
-
+```
 3. Exploratory Data Analysis (EDA)
 
 Churn Distribution
@@ -103,7 +103,7 @@ Churn Distribution
 pie title Churn Distribution
     "No Churn (74.4%)" : 74.4
     "Churn (25.6%)" : 25.6
-
+```
 
 Churn by Key Dimensions
 
@@ -113,7 +113,7 @@ xychart-beta
     x-axis ["Month-to-month", "One year", "Two year"]
     y-axis "Churn Rate %" 0 --> 30
     bar [26.7, 24.6, 23.7]
-
+```
 
 Correlation with Churn
 
@@ -137,7 +137,7 @@ graph LR
     N1 --> Churn
     N2 --> Churn
     N3 --> Churn
-
+```
 4. Data Cleaning & Feature Engineering
 
 Data Cleaning Steps
@@ -148,7 +148,7 @@ flowchart LR
     B --> C[Handle Missing Values<br/>fillna(0)]
     C --> D[Drop customerID<br/>column]
     D --> E[Clean Data Ready]
-
+```
 
 Feature Engineering
 
@@ -164,7 +164,7 @@ flowchart TB
         F7[AvgMonthlyPerTenure<br/>Value per month]
         F8[CustomerLifetimeValue<br/>Total + 12*Monthly]
     end
-
+```
 Feature Importance (Top 10)
 
 ```mermaid
@@ -173,7 +173,7 @@ xychart-beta
     x-axis ["TotalServices", "tenure", "MonthlyCharges", "Contract", "PaymentMethod", "IsNewCustomer", "EngagementScore", "InternetService", "TotalCharges", "SeniorCitizen"]
     y-axis "Importance" 0 --> 0.25
     bar [0.23, 0.18, 0.12, 0.10, 0.08, 0.07, 0.06, 0.05, 0.04, 0.03]
-
+```
 5. Model Training & Hyperparameter Tuning
 
 ```mermaid
@@ -195,7 +195,7 @@ flowchart TB
     C --> T2
     C --> T3
     C --> T4
-
+```
 Hyperparameter Tuning Jobs
 
 ```mermaid
@@ -204,7 +204,7 @@ xychart-beta
     x-axis ["Job1", "Job2", "Job3", "Job4", "Job5", "Job6", "Job7", "Job8", "Job9", "Job10"]
     y-axis "AUC Score" 0.82 --> 0.87
     line [0.8528, 0.8259, 0.8520, 0.8291, 0.8253, 0.8587, 0.8548, 0.8614, 0.8589, 0.8631]
-
+```
 
 Best Model Performance
 
@@ -215,7 +215,7 @@ pie title Model Performance Metrics
     "Precision (75.2%)" : 75.2
     "Recall (70.1%)" : 70.1
     "F1 Score (72.5%)" : 72.5
-
+```
 6. Model Evaluation
 
 Confusion Matrix
@@ -242,7 +242,7 @@ graph TD
     TP --> M2
     TP --> M3
     TP --> M4
-
+```
 ROC Curve Performance
 
 ```mermaid
@@ -252,7 +252,7 @@ xychart-beta
     y-axis "True Positive Rate" 0 --> 1
     line [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
     line [0, 0.3, 0.5, 0.65, 0.75, 0.82, 0.87, 0.91, 0.94, 0.97, 1]
-
+```
 
 7. Business Insights
 
@@ -273,7 +273,7 @@ graph TD
     D3 --> Action
     D4 --> Action
     D5 --> Action
-
+```
 Customer Segmentation by Risk
 
 ```mermaid
@@ -282,7 +282,7 @@ pie title Customer Risk Segmentation
     "Medium Risk (0.4-0.7)" : 25
     "Low Risk (0.2-0.4)" : 35
     "Loyal (Score < 0.2)" : 25
-
+```
 
 Priority Action Matrix
 
@@ -307,7 +307,7 @@ graph LR
     High --> Impact[Maximum Impact]
     Medium --> Impact
     Low --> Impact
-
+```
 8. Business Impact & ROI
 
 ROI Projection
@@ -318,7 +318,7 @@ xychart-beta
     x-axis ["Year 1", "Year 2", "Year 3"]
     y-axis "ROI %" 0 --> 700
     bar [312, 522, 649]
-
+```
 
 Revenue Impact
 
@@ -341,7 +341,7 @@ graph LR
     
     Loss --> Savings
     Savings --> Investment
-
+```
 
 Key Business Metrics
 
@@ -358,7 +358,7 @@ graph TD
     M2 --> Value
     M3 --> Value
     M4 --> Value
-
+```
 
 9. Architecture & Technology Stack
 
@@ -402,7 +402,7 @@ flowchart TB
     EP --> CRM
     EP --> Dash
     EP --> Alert
-
+```
 
 Technology Stack
 
@@ -439,7 +439,7 @@ graph LR
     SM --> S3
     SM --> EP2
     EP2 --> API
-
+```
 
 
 SageMaker V3 Components
@@ -463,7 +463,7 @@ flowchart TB
     OD --> MT
     MT --> MB2
     MB2 --> EP3
-
+```
 10. Actionable Recommendations
 
 ```mermaid
@@ -503,7 +503,7 @@ graph TD
         S5C[Win-back Campaigns]
         S5D[25% Retention ROI]
     end
-
+```
 
 
 Conclusion
@@ -525,7 +525,7 @@ graph TD
     S3 --> Success
     S4 --> Success
     S5 --> Success
-
+```
 
 Key Achievements
 
@@ -542,7 +542,7 @@ graph LR
     A2 --> Value
     A3 --> Value
     A4 --> Value
-
+```
 
 Next Steps
 
@@ -554,7 +554,7 @@ graph TD
     N4[Create Dashboard<br/>QuickSight Monitoring] --> N6
     N5[Develop A/B Testing<br/>Framework] --> N6
     N6[Production Deployment]
-
+```
 
 Report Summary
 
