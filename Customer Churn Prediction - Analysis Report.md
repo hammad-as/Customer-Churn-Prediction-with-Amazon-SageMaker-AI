@@ -11,6 +11,7 @@ Customer churn is one of the most critical challenges faced by subscription-base
 Key Business Questions
 
 ```mermaid
+
 graph TD
     A[Business Questions] --> B[What factors contribute most to churn?]
     A --> C[Which customers are most at risk?]
