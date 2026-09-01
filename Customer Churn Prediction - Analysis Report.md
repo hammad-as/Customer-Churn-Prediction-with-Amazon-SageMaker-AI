@@ -467,7 +467,6 @@ flowchart TB
 10. Actionable Recommendations
 
 ```mermaid
-Retention Strategies
 graph TD
     subgraph Strategy1["Strategy 1: Early Engagement"]
         S1A[Welcome Campaigns]
@@ -475,28 +474,28 @@ graph TD
         S1C[Onboarding Resources]
         S1D[30% Churn Reduction]
     end
-    
+
     subgraph Strategy2["Strategy 2: Contract Conversion"]
         S2A[Annual Contract Incentives]
         S2B[Bundle Discounts]
         S2C[Loyalty Tiers]
         S2D[25% Churn Reduction]
     end
-    
+
     subgraph Strategy3["Strategy 3: Service Adoption"]
         S3A[Cross-sell Services]
         S3B[Free Trials]
         S3C[Integration Benefits]
         S3D[20% CLV Increase]
     end
-    
+
     subgraph Strategy4["Strategy 4: Payment Optimization"]
         S4A[Auto-pay Incentives]
         S4B[Simplify Process]
         S4C[Payment Guidance]
         S4D[15% Churn Reduction]
     end
-    
+
     subgraph Strategy5["Strategy 5: Predictive Marketing"]
         S5A[CRM Churn Scoring]
         S5B[Segmented Campaigns]
@@ -556,17 +555,24 @@ graph TD
     N6[Production Deployment]
 ```
 
-Report Summary
+Next Steps
 
-Section	Status	Key Finding
-Business Understanding	✅	25-30% churn reduction target
-Data Quality	✅	No missing values, 7,043 records
-EDA	✅	Churn rate 25.6%, key drivers identified
-Feature Engineering	✅	9 new features created
-Model Performance	✅	AUC 0.8631, Accuracy 82.3%
-Hyperparameter Tuning	✅	Best: max_depth=3, eta=0.1
-Business Impact	✅	$304,770 annual savings
-ROI	✅	312% ROI, 2.9 month payback
+Priority	Action	Timeline
+1	Implement automated retraining pipeline	Month 1
+2	Set up model monitoring with CloudWatch	Month 1
+3	Integrate with CRM system	Month 2
+4	Create QuickSight dashboard	Month 2
+5	Develop A/B testing framework	Month 3
+6	Establish model governance	Month 3
+
+Summary
+Aspect	Status
+Total Checklist Items	12
+Completed	12 ✅
+Model Type	SageMaker XGBoost
+Best AUC	0.8631
+Business Value	$304,770/year
+ROI	312%
 
 Project: Customer Churn Prediction with SageMaker AI
 Author: Hammad Shaikh
