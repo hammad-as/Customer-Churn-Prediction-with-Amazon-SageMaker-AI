@@ -1,6 +1,9 @@
 ---
 title: Customer Churn Prediction - Executive Summary
 ---
+
+
+```mermaid
 flowchart TD
     A[Customer Churn Problem] --> B[ML Pipeline]
     B --> C[Model XGBoost]
