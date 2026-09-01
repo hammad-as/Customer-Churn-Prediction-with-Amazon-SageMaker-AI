@@ -32,20 +32,23 @@ This project implements a complete end-to-end machine learning pipeline for pred
 
 ## Architecture
 
-─────────────────────────────────────────────────────────────────────┐
-│ SageMaker AI Pipeline │
+┌─────────────────────────────────────────────────────────────────────┐
+│                    SageMaker AI Pipeline                             │
 ├─────────────────────────────────────────────────────────────────────┤
-│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
-│ │ Data │ │ Training │ │ Deployment │ │
-│ │ Loading │───▶│ Job │───▶│ Endpoint │ │
-│ │ (S3) │ │ (SageMaker)│ │ (SageMaker) │ │
-│ └──────────────┘ └──────────────┘ └──────────────┘ │
-│ │
-│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
-│ │ Feature │ │ Hyperparam │ │ Real-time │ │
-│ │ Engineering │ │ Tuning │ │ Predictions │ │
-│ │ (Local) │ │ (SageMaker) │ │ (Endpoint) │ │
-│ └──────────────┘ └──────────────┘ └──────────────┘ │
+│                                                                     │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
+│  │   Data       │    │   Training   │    │  Deployment  │         │
+│  │   Loading    │───▶│   Job        │───▶│  Endpoint    │         │
+│  │   (S3)       │    │   (SageMaker)│    │  (SageMaker) │         │
+│  └──────────────┘    └──────────────┘    └──────────────┘         │
+│         │                  │                  │                     │
+│         ▼                  ▼                  ▼                     │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
+│  │  Feature     │    │  Hyperparam  │    │  Real-time   │         │
+│  │  Engineering │    │  Tuning      │    │  Predictions │         │
+│  │  (Local)     │    │  (SageMaker) │    │  (Endpoint)  │         │
+│  └──────────────┘    └──────────────┘    └──────────────┘         │
+│                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 
 
