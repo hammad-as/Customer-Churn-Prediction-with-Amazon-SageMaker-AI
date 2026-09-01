@@ -32,24 +32,111 @@ This project implements a complete end-to-end machine learning pipeline for pred
 
 ## Architecture
 
-┌─────────────────────────────────────────────────────────────────────┐
-│                    SageMaker AI Pipeline                             │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
-│  │   Data       │    │   Training   │    │  Deployment  │         │
-│  │   Loading    │───▶│   Job        │───▶│  Endpoint    │         │
-│  │   (S3)       │    │   (SageMaker)│    │  (SageMaker) │         │
-│  └──────────────┘    └──────────────┘    └──────────────┘         │
-│         │                  │                  │                     │
-│         ▼                  ▼                  ▼                     │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐         │
-│  │  Feature     │    │  Hyperparam  │    │  Real-time   │         │
-│  │  Engineering │    │  Tuning      │    │  Predictions │         │
-│  │  (Local)     │    │  (SageMaker) │    │  (Endpoint)  │         │
-│  └──────────────┘    └──────────────┘    └──────────────┘         │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+## Architecture
+
+### System Architecture
+
+```mermaid
+flowchart TB
+    subgraph Data["Data Layer"]
+        S3[("S3 Bucket<br/>Churn.csv")]
+    end
+    
+    subgraph Processing["Processing Layer"]
+        FE[Feature Engineering<br/>• Tenure Segments<br/>• Service Adoption Score<br/>• Churn Risk Indicators]
+        Split[Train/Test Split<br/>60/20/20]
+    end
+    
+    subgraph Training["Training Layer"]
+        SM[SageMaker Training]
+        HT[Hyperparameter Tuning<br/>Bayesian Optimization]
+        XGB[XGBoost Model]
+    end
+    
+    subgraph Deployment["Deployment Layer"]
+        EP[("SageMaker Endpoint<br/>Real-time Inference")]
+        MB[ModelBuilder]
+    end
+    
+    subgraph Monitoring["Monitoring & MLOps"]
+        CM[CloudWatch<br/>Metrics]
+        Reg[Model Registry<br/>Versioning]
+    end
+    
+    subgraph Business["Business Applications"]
+        CRM[CRM Integration]
+        Dash[Dashboard<br/>QuickSight]
+        Alert[Alert System<br/>SNS]
+    end
+    
+    S3 --> FE
+    FE --> Split
+    Split --> SM
+    SM --> HT
+    HT --> XGB
+    XGB --> MB
+    MB --> EP
+    EP --> CRM
+    EP --> Dash
+    EP --> Alert
+    CM -.-> EP
+    Reg -.-> XGB
+```
+
+### Data Flow
+
+```mermaid
+flowchart LR
+    A[Customer Data] --> B[Data Cleaning]
+    B --> C[Feature Engineering]
+    C --> D[XGBoost Model]
+    D --> E[Churn Probability]
+    E --> F[Risk Score]
+    F --> G[Retention Actions]
+```
+
+### SageMaker V3 Components
+
+```mermaid
+flowchart TB
+    subgraph V3["SageMaker V3"]
+        MT[ModelTrainer]
+        MB2[ModelBuilder]
+        EP2[Endpoint]
+        ID[InputData]
+        Comp[Compute]
+    end
+    
+    ID --> MT
+    Comp --> MT
+    MT --> MB2
+    MB2 --> EP2
+```
+
+### Business Decision Flow
+
+```mermaid
+flowchart TD
+    A[Customer Data] --> B[SageMaker Endpoint]
+    B --> C[Churn Score 0.0-1.0]
+    
+    C --> D{Score > 0.7?}
+    D -->|Yes| E[High Risk<br/>Retention Call]
+    D -->|No| F{Score > 0.4?}
+    
+    F -->|Yes| G[Medium Risk<br/>Email Campaign]
+    F -->|No| H{Score > 0.2?}
+    
+    H -->|Yes| I[Low Risk<br/>Regular Check-in]
+    H -->|No| J[Loyal<br/>Referral Program]
+    
+    E --> K[Revenue Protection]
+    G --> K
+    I --> K
+    J --> K
+    
+    K --> L[$304,770 Annual Savings]
+```
 
 
 ## Project Checklist
