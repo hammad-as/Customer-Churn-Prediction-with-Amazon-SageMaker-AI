@@ -67,9 +67,9 @@ This project implements a complete end-to-end machine learning pipeline for pred
 | 12 | Cleanup | ✅ |
 
 
-Results
+## Results
 
-Key Insights
+## Key Insights
 Month-to-month contracts have the highest churn rate (26.7%)
 
 New customers (<6 months tenure) are most at risk
@@ -79,7 +79,7 @@ Electronic check users show higher churn probability
 Service adoption significantly reduces churn risk
 
 
-Technology Stack
+## Technology Stack
 
 AWS SageMaker: Model training and deployment
 
