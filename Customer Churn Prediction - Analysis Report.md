@@ -555,25 +555,28 @@ graph TD
     N6[Production Deployment]
 ```
 
-Next Steps
+### Next Steps Priority
 
-Priority |	Action | Timeline
-1 |	Implement automated retraining pipeline | Month 1
-2 |	Set up model monitoring with CloudWatch | Month 1
-3 |	Integrate with CRM system |	Month 2
-4 |	Create QuickSight dashboard |	Month 2
-5 |	Develop A/B testing framework |	Month 3
-6 |	Establish model governance |	Month 3
+| Priority | Action | Timeline |
+| :--- | :--- | :--- |
+| **1** | Implement automated retraining pipeline | Month 1 |
+| **2** | Set up model monitoring with CloudWatch | Month 1 |
+| **3** | Integrate with CRM system | Month 2 |
+| **4** | Create QuickSight dashboard | Month 2 |
+| **5** | Develop A/B testing framework | Month 3 |
+| **6** | Establish model governance | Month 3 |
 
-Summary
-Aspect | Status
-Model Type | SageMaker XGBoost
-Best AUC | 0.8631
-Business Value | $304,770/year
-ROI | 312%
+### Summary Aspect
 
-Project: Customer Churn Prediction with SageMaker AI
-Author: Hammad Shaikh
+| Aspect | Status |
+| :--- | :--- |
+| **Model Type** | SageMaker XGBoost |
+| **Best AUC** | 0.8631 |
+| **Business Value** | $304,770/year |
+| **ROI** | 312% |
+
+### Project: Customer Churn Prediction with SageMaker AI
+### Author: Hammad Shaikh
 
 
 
